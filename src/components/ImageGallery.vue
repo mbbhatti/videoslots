@@ -88,12 +88,7 @@ export default {
             imageHeight: process.env.VUE_APP_GALLERY_IMAGE_HEIGHT,
             search: ''
         }
-    },
-    filters: {
-        changeImageLink(id, url, width, height) {            
-            return url + 'id/' + id + '/'+width+'/'+height;
-        }
-    },
+    },    
     methods: {
         getPhotoData: function(url) {
             axios.get(url)
@@ -140,6 +135,11 @@ export default {
                 modal.classList.add('hide');
             }                     
         }        
+    },
+    filters: {
+        changeImageLink(id, url, width, height) {            
+            return url + 'id/' + id + '/'+width+'/'+height;
+        }
     },
     mounted() {
         this.getPhotoData(this.url+'v2/list');        

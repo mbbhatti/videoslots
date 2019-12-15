@@ -118,10 +118,14 @@ export default {
                 .finally(() => this.loading = false)
         },
         paginate: function(event) {
-            const page = event.target.getAttribute('data-page');
+            const page = event.target.getAttribute('data-page');            
             if (page < this.currentPage || page > this.currentPage) {
-                const url = this.url + 'v2/list?page=' + page + '&limit=' + this.limit;
-                this.getPhotoData(url);
+                if(page == 1) {
+                    this.getPhotoData(this.url+'v2/list');
+                } else {
+                    const url = this.url + 'v2/list?page=' + page + '&limit=' + this.limit;
+                    this.getPhotoData(url);
+                }                
             }
             this.currentPage = page;
         },

@@ -21,4 +21,6 @@ npm run lint
 ```
 
 ### Customize configuration
-- .env file created for Gallery url, width, height and limit.
+```
+.env file created for Gallery url, width, height and limit.
+```

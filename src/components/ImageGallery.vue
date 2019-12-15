@@ -5,7 +5,7 @@
     </section>
     <section v-else>        
         <h1>{{ msg }}</h1>        
-        <div v-if="loading">Loading...</div>        
+        <div v-if="loading" class="centered"></div>        
         <input 
             type="text" 
             class="form-control" 
@@ -82,10 +82,10 @@ export default {
             prevPage: 1,
             nextPage: 0,
             currentPage: 1,
-            limit: 30,
+            limit: process.env.VUE_APP_GALLERY_LIMIT,
             url: process.env.VUE_APP_GALLERY_URL,
-            imageWidth: 367,
-            imageHeight: 267,
+            imageWidth: process.env.VUE_APP_GALLERY_IMAGE_WIDTH,
+            imageHeight: process.env.VUE_APP_GALLERY_IMAGE_HEIGHT,
             search: ''
         }
     },
